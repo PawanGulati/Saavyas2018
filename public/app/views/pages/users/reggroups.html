@@ -1,0 +1,206 @@
+<!-- Main Section -->
+    <!-- Start of Container -->
+    <div class="container" style="background-color: rgba(0,0,0,0.9);color:#1ee2e7">
+        <div class="row">
+<section id="contact" class=" col-md-12 col-sm-12  col-lg-12 " >
+            <div class="col-lg-12" style="border-style: solid;
+    border-color: white; border-radius: 20px;  ">
+                <form name="regForm" ng-submit="regg.regGrp(regGrpData, regForm.$valid, confirmed);" id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row text-center" >
+     
+    <div class="container" >
+        
+        <h2 ">Team Registration</h2>
+        <h3 style="color: white;">Please enter your registration information.</h3>
+    </div>
+</div>
+                            <div class="form-group">
+                                <!-- name Div -->
+                                <div ng-class="{ 'has-success':(regForm.teamname.$valid && !regForm.teamname.$pristine && !regg.teamnameInvalid), 'has-error':(!regForm.teamname.$valid && !regForm.teamname.$pristine) || (!regForm.teamname.$valid && regForm.$submitted) || regg.teamnameInvalid }">
+                                    <!-- name Input -->
+                                    <label>Team name:</label>
+                                    <input ng-disabled="regg.disabled" class="form-control" type="text" name="teamname" placeholder="Name of yor Team*" ng-model="regg.reggemData.teamname" ng-minlength="3" ng-maxlength="25" ng-pattern="/^(?!.*?[\W])(?=.*?[a-zA-Z]|=.*?[A-Z]).{3,16}$/" ng-blur="regg.checkname(reggemData);" required>
+                                    <!-- name Validation -->
+                                    <p class="help-block" ng-show="(!regForm.teamname.$pristine && regForm.teamname.$error.required) || (regForm.$submitted && regForm.teamname.$error.required)">This field is required</p>
+                                    <span ng-show="regg.checkingname && regForm.teamname.$valid" class="glyphicon glyphicon-repeat"></span>
+                                    <p class="help-block" ng-show="regg.nameMsg && !regForm.teamname.$error.required && regForm.teamname.$valid">{{ regg.nameMsg }}</p>
+                                    <ul ng-show="(!regForm.teamname.$pristine && regForm.teamname.$error.pattern) || (!regForm.teamname.$pristine && regForm.teamname.$error.minlength) || (!regForm.teamname.$pristine && regForm.teamname.$error.maxlength)" class="help-block">
+                                        <li>Must not contain any special characters or spaces</li>
+                                        <li>Must be at least 3 characters but no more than 25</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <!-- Email Div -->
+                                <div ng-class="{ 'has-success':(regForm.email.$valid && !regForm.email.$pristine && !regu.emailInvalid), 'has-error':(!regForm.email.$valid && !regForm.email.$pristine) || (!regForm.email.$valid && regForm.$submitted) || regu.emailInvalid }">
+                                    <!-- Email Input -->
+                                    <label">Email:</label">
+                                    <input ng-disabled="regg.disabled" class="form-control" type="text" name="email" placeholder="E-mail *" ng-model="regg.reggemData.email" ng-minlength="3" ng-maxlength="40" ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' ng-blur="regg.checkEmail(reggemData);" required>
+                                    <!-- Email Validation -->
+                                    <p class="help-block" ng-show="(!regForm.email.$pristine && regForm.email.$error.required) || (regForm.$submitted && regForm.email.$error.required)">This field is required</p>
+                                    <span ng-show="regg.checkingEmail && regForm.email.$valid" class="fa fa-cog fa-spin fa-fw"></span>
+                                    <p class="help-block" ng-show="regg.emailMsg && !regForm.email.$error.required && regForm.email.$valid">{{ regu.emailMsg }}</p>
+                                    <ul ng-show="(!regForm.email.$pristine && regForm.email.$error.pattern) || (!regForm.email.$pristine && regForm.email.$error.minlength) || (!regForm.email.$pristine && regForm.email.$error.maxlength)" class="help-block">
+                                        <li>Must contain "@"</li>
+                                        <li>Must not contain any special characters</li>
+                                        <li>Must be at least 3 characters but no more than 25</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="form-group">
+                                <div ng-class="{ 'has-success':(regForm.contact.$valid && !regForm.contact.$pristine), 'has-error':(!regForm.contact.$valid && !regForm.contact.$pristine) || (!regForm.contact.$valid && regForm.$submitted) }">
+                                    <!-- First Name Input -->
+                                    <label">Contact:</label">
+                                    <input ng-disabled="regg.disabled" class="form-control" type="text" name="contact" placeholder="Your Contact Number *" ng-model="regg.reggemData.contact" ng-pattern="/(7|8|9)\d{9}/" ng-minlength="10" ng-maxlength="10" required>
+                                    <!-- First Name Validation -->
+                                    <p class="help-block" ng-show="(!regForm.contact.$pristine && regForm.contact.$error.required) || (regForm.$submitted && regForm.contact.$error.required)">This field is required</p>
+                                    <ul ng-show="(!regForm.contact.$pristine && regForm.contact.$error.pattern) || (!regForm.contact.$pristine && regForm.contact.$error.minlength) || (!regForm.contact.$pristine && regForm.contact.$error.maxlength)" class="help-block">
+                                        <li>Must start with 7,8 or 9 </li>
+                                        <li>Must not contain any special character</li>
+                                        <li>Must be at 10 characters </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-group">
+                        <div ng-class="{ 'has-success':(regForm.institute.$valid && !regForm.institute.$pristine), 'has-error':(!regForm.institute.$valid && !regForm.institute.$pristine) || (!regForm.institute.$valid && regForm.$submitted) }">
+                            <label">Institue:</label">
+                            <input ng-disabled="regg.disabled" class="form-control" placeholder="Name of your institute *" ng-minlength="4" ng-maxlength="80" required type="text" ng-model="regg.reggemData.institute" name="institute">
+                            <p class="help-block" ng-show="(!regForm.institute.$pristine && regForm.institute.$error.required) || (regForm.$submitted && regForm.institute.$error.required)">This field is required</p>
+                            <ul ng-show="(!regForm.institute.$pristine && regForm.institute.$error.pattern) || (!regForm.institute.$pristine && regForm.institute.$error.minlength) || (!regForm.institute.$pristine && regForm.institute.$error.maxlength)" class="help-block">
+                                        <li>Must not contain any special character</li>
+                                        <li>Must be atleast 4 and maximum 40 characters </li>
+                                    </ul>
+                        </div>
+                        </div>
+                        <div class="col-md-12 form-group">
+                        <div ng-class="{ 'has-success':(regForm.tlname.$valid && !regForm.tlname.$pristine), 'has-error':(!regForm.tlname.$valid && !regForm.tlname.$pristine) || (!regForm.tlname.$valid && regForm.$submitted) }">
+                            <label">Team Leader's Name:</label">
+                            <input ng-disabled="regg.disabled" class="form-control" placeholder="Name of your tlname *" ng-minlength="4" ng-maxlength="80" required type="text" ng-model="regg.reggemData.tlname" name="tlname">
+                            <p class="help-block" ng-show="(!regForm.tlname.$pristine && regForm.tlname.$error.required) || (regForm.$submitted && regForm.tlname.$error.required)">This field is required</p>
+                            <ul ng-show="(!regForm.tlname.$pristine && regForm.tlname.$error.pattern) || (!regForm.tlname.$pristine && regForm.tlname.$error.minlength) || (!regForm.tlname.$pristine && regForm.tlname.$error.maxlength)" class="help-block">
+                                        <li>Must not contain any special character</li>
+                                        <li>Must be atleast 4 and maximum 40 characters </li>
+                                    </ul>
+                        </div>
+                        </div>
+                        <div class="col-md-12 form-group">
+                        <div ng-class="{ 'has-success':(regForm.memberno.$valid && !regForm.memberno.$pristine), 'has-error':(!regForm.memberno.$valid && !regForm.memberno.$pristine) || (!regForm.memberno.$valid && regForm.$submitted) }">
+                            <label">Number of Members:</label">
+                            <input ng-disabled="regg.disabled" class="form-control" placeholder="Name of your memberno *"  required type="text" ng-model="regg.reggemData.memberno" name="memberno">
+                            <p class="help-block" ng-show="(!regForm.memberno.$pristine && regForm.memberno.$error.required) || (regForm.$submitted && regForm.memberno.$error.required)">This field is required</p>
+                            <ul ng-show="(!regForm.memberno.$pristine && regForm.memberno.$error.pattern) || (!regForm.memberno.$pristine && regForm.memberno.$error.minlength) || (!regForm.memberno.$pristine && regForm.memberno.$error.maxlength)" class="help-block">
+                                        <li>Must not contain any special character</li>
+                                        <li>Must be atleast 4 and maximum 40 characters </li>
+                                    </ul>
+                        </div>
+                        </div>
+                        </div>
+                        
+                        <div><input type="text" ng-model="regg.reggemData.tevents" name="tevents" style="display: none;"></div>
+                        
+                        <hr style="color: white;width: 90%;border-top: dotted 1px;color: orange">
+                        <div class="col-md-12" style="text-align: left;">
+                            <h1 style="text-align: center;">Events</h1>
+                            <h6 style="text-align: center;">*Please make sure you select atleast one event*</h6>
+                            <hr style="color: white;width: 90%;border-top: dotted 1px;color: orange">
+                            <div id="pakker"  mt-to="checkboxList">
+                                <div class="col-sm-12 col-lg-12">
+
+                                <div class="col-md-4 col-lg-4" style="border-top: solid 1px;">
+                          <div class="text" style="text-align: left;font-size: 20px;">Technical</div>
+          <ul style="font-size: 18px; background-position: center;background-size: contain;background-repeat: no-repeat; list-style-position: outside;list-style: outside none;color:#1ee2e7 ">
+            <li class="checkbox" style=""><label "><input type="checkbox" mt-checkbox="'Robo War'" /> Robo War</label></li>
+            <li class="checkbox" style=""><label "><input type="checkbox" mt-checkbox="'Robo Soccer'" /> Robo Soccer</label></li>
+            <li class="checkbox" style=""><label "><input type="checkbox" mt-checkbox="'Line Follower'" /> Line Follower</label></li>
+            <li class="checkbox" style=""><label "><input type="checkbox" mt-checkbox="'Robo Race'" /> Robo Race</label></li>
+            <li class="checkbox" style=""><label "><input type="checkbox" mt-checkbox="'Programmatics'" /> Programmatics</label></li>
+          </ul>
+        
+      </div>
+                          <div class="col-md-4 col-lg-4" style="border-top: solid 1px;">
+                          <div class="text" style="text-align: left;font-size: 18px;">Cultural</div>
+          <ul style="font-size: 18px; background-position: center;background-size: contain;background-repeat: no-repeat; list-style-position: outside;list-style: outside none;">
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Picasso'" /> Picasso</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Step Up'" /> Step Up</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Zest'" /> Zest</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Face Paint'" /> Face Paint</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Voice'" /> Voice</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Footloose'" /> Footloose</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Battle of Bands'" /> Battle of Bands</label></li>
+          </ul>
+        
+      </div>
+           <div class="col-md-4 col-lg-4" style="border-top: solid 1px;">
+            <div class="text" style="text-align: left;font-size: 18px;">Entertainment</div>
+          <ul style="font-size: 18px; background-position: center;background-size: contain;background-repeat: no-repeat; list-style-position: outside;list-style: outside none;">
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Third Degree'" /> Third Degree</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Tug Of War'" /> Tug Of War</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Spot Events'" /> Spot Events</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Futsal'" /> Futsal</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Pc Gamming'" /> Pc Gamming</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Treasure Hunt'" /> Treasure Hunt</label></li>
+          </ul></div>              </div>
+                        <div class="col-sm-12 col-lg-12" >
+                          <div class="col-md-6 col-lg-6" style="border-top: solid 1px;">
+                          <div class="text" style="text-align: left;font-size: 18px;">Literature</div>
+          <ul style="font-size: 18px; background-position: center;background-size: contain;background-repeat: no-repeat; list-style-position: outside;list-style: outside none;">
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Feel the Heat'" /> Feel the Heat (Debate)</label></li>
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Just a Minute'" /> Just a Minute</label></li>
+            
+          </ul></div>
+            <div class="col-md-6 col-lg-6 " style="border-top: solid 1px; bottom:" >
+                        <div class="text" style="text-align: left;font-size: 18px;">Quizzes</div>
+          <ul style="font-size: 18px; background-position: center;background-size: contain;background-repeat: no-repeat; list-style-position: outside;list-style: outside none;">
+            <li class="checkbox" style="color: #19f6e8"><label "><input type="checkbox" mt-checkbox="'Trivium'" /> Trivium</label></li>
+            
+          </ul></div>
+          </div>
+
+                            
+                        </div>
+                        <div class="col-sm-12">                        <hr style="width: 90%;color: orange;border-top: dotted 1px;">
+</div>
+
+                        <div class="clearfix"></div>
+                        <div  style="text-align: center;margin: auto;padding: auto;">
+                            <div id="success"></div>
+                            <!-- Login Button -->
+                            <button type="submit" ng-click="init();" ng-disabled="regg.disabled" class="btn btn-xl">Register</button>
+                            
+                        </div><br>
+                        <div class="text-center" ng-show="regg.loading" style="text-align: center;">
+    <span class="fa fa-cog fa-spin fa-3x fa-fw"></span>
+    <p>Loading..........</p>
+</div>
+        <!-- Loading Icon (Bootstrap) -->
+
+        <!-- Custom Messages -->
+        <div class="show-hide-message help-block" ng-show="regg.successMsg || regg.errorMsg">
+            <hr style="width: 80%">
+            <div ng-class="aler" style="color:orange ;text-align: center;">*{{ regg.successMsg || regg.errorMsg }}*</div>
+        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+
+        <!-- Loading Icon (Bootstrap) -->
+       
+        <!-- Custom Messages -->
+
+    </div>
+
+    <!-- End of Container -->
+</section>
+</div>
+</div>
+

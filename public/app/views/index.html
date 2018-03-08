@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <meta charset="UTF-8">
+  
+  <!-- FOR SEARCH ENGINES ONLY-->
+  <meta name="description" content="Saavyas is the first techno-cultural festival of National Institute of Technology Goa. To be held in 2018">
+  <meta name="keywords" content="Saavyas,saavyas,NITG, Saavyas 2018, saavyas 18, NIT Goa Saavyas, NITG SAAVYAS,nitg saavyas 18, saavyas nitg, saavyas nitgoa, NIT Goa, National Institute of Technology Goa, SAAVYAS, NIT, Cultural Fest, Cultural Fest India, College Cultural Fest, Cultural fest @ NIT, Saavyas NIT Goa, Saavyas INDIA, Indian Festivals, Saavyas NITG, Cultural fest nitgoa, NITG Cultural Event, Cultural Events, Cultural Events in India, Most famous Cultural Event, Indian Cultural Fest, Saavyas Event, Goa, Cultural fest Goa, Goan Attraction, NIT Goa, Cultural fest Nationa Institute of Technology Goa, Best Cultural Events, NITG, nitg, nitg events, Nitg Events, NITG Main Events">
+  <!--  END   -->
+  
+ <link rel="shortcut icon" href="assets/images/logott1.png">
+
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style1.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- font awesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/regadmin.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/sticky.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/register.css">
+     <link rel="stylesheet" type="text/css" href="assets/css/meet.css" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="assets/css/pageCss/management.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/pageCss/home.css">
+
+  <script type="text/javascript" src="assets/js/script.js"></script>
+
+  <!-- Main Angular Files -->
+  <script src="assets/js/angular.js"></script>
+  <script src="assets/js/angular-route.js"></script>
+  <script src="assets/js/angular-animate.js"></script>
+
+
+  
+  <!-- Angular Controllers -->
+  <script src="app/controllers/adminCtrl.js"></script>
+  <script src="app/controllers/mainCtrl.js"></script>
+  <script src="app/controllers/userCtrl.js"></script>
+  <script src="app/controllers/teamCtrl.js"></script>
+
+  <script src="app/controllers/test.js"></script>
+  <script src="app/controllers/angular-checkboxes.js"></script>
+
+
+
+
+  
+  <script src="app/controllers/managementCtrl.js"></script>
+
+
+
+  <script src="app/services/adminServices.js"></script>
+  <script src="app/services/authServices.js"></script>
+
+
+  <!-- Angular Config/Routes -->
+  <script src="app/app.js"></script>
+  <script src="app/routes.js"></script>
+  <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/pageJs/adder.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/bldona.js"></script>
+    
+<!--     <script src="assets/js/timer.js"></script>
+ -->
+
+  <style>
+    
+    #preloader  {
+
+     position: fixed;
+
+     top: 0;
+
+     left: 0;
+
+     right: 0;
+
+     bottom: 0;
+
+     background-color: rgba(0,0,0,1);
+
+     z-index: 11;
+     width: auto;
+    height: 100%;
+
+ }
+
+ 
+
+#status  {
+      width: 50%;
+     max-width: 500px;
+
+     height:auto;
+
+     position: absolute;
+     left:0 ;
+
+     top: 0;
+     right:0 ;
+     bottom: 0;
+
+/*     margin-left:30% ;
+*/
+     z-index: 12;
+
+     background-repeat: no-repeat;
+
+     background-position: center;
+
+     margin: auto;
+
+ }
+
+  </style>
+  
+  
+  
+  
+  <script>
+    $(window).on('load',function(){
+    
+      $("#status").fadeOut();
+      $("#preloader").delay(1000).fadeOut("slow");
+
+});
+
+  </script> 
+
+
+</head>
+<body ng-app='userApp' ng-controller="mainCtrl as main" ng-show="main.loadme">
+<div id="preloader"></div><div  class=""><img id="status" src="assets/images/loading.gif"></div>
+
+<div id="myNav" class="overlay navbar-inverse" style="position: fixed;top:0;">
+  <div class="bar2" style=""> 
+      <a href="/management" class="adminbutton fa fa-cloud" ng-show="main.isLoggedIn" onclick="closeNav()" aria-hidden="true" style=" font-size: 20px;display: inline-block;" title="Management">Management</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"  >&times;</a>
+
+  </div>
+
+  <div class="overlay-content">
+    <div class="container" >
+      <div class="row" style="">
+
+          <div class="col-lg-4 col-sm-6 ">
+            <a href="/" onclick="closeNav(),anim()" ><span class="fa fa-home"></span><br> Home</a>
+          </div>
+         <!--  <div class="col-lg-4 col-sm-6 ">
+            <a href="#/" onclick="closeNav()"><span class="fa fa-yelp"></span><br> Nirvana</a>
+          </div> -->
+          <div class="col-lg-4 col-sm-6">
+            <a href="/sponsors" onclick="closeNav(),anim()"><span class="fa fa-suitcase"></span><br> Sponsors</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="/initiatives" onclick="closeNav(),anim()"><span class="fa fa-lightbulb-o"></span><br> Initiatives</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="/hospitality" onclick="closeNav(),anim()"><span class="fa fa-hotel"></span><br> Hospitality</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="/events" onclick="closeNav(),anim()"><span class="fa fa-music"></span><br> Events</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="/meetteam" onclick="closeNav(),anim()"><span class="fa fa-group"></span><br> Meet Team</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="/register" onclick="closeNav(),anim()"><span class="fa fa-edit"></span><br> Register</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="/coming"  onclick="closeNav()"><span class="fa fa-yelp"></span><br> Pronites</a>
+          </div>
+          
+          <div class="col-lg-4  col-sm-6">
+          	<a href="/aboutus" onclick="closeNav()"><span class="fa fa-user"></span><br>About Us</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+          	<a href="/reachus" onclick="closeNav()"><span class="fa fa-map-marker"></span><br>Reach Us</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="assets/pdf/ROBOTICS WORKSHOP.pdf" download="ROBOTICS WORKSHOP.pdf" target="_self" onclick="closeNav()"><span class="fa fa fa-wrench"></span><br>Robo Workshop</a>
+          </div>
+      </div>
+    	</div>
+  	</div>
+	</div>
+</div>
+<!-- particles.js container -->
+<div class="bar" style="position: fixed;width: 100%;height: 40px; z-index: 4;">
+
+  <span style="font-size:30px;cursor:pointer;color: #00a0f7;" onclick="openNav()" class="nav">&#9776; </span> <!-- For full screen navigation click here -->
+  <a href="/login" title="login" ng-show="!main.isLoggedIn" class="fa fa-sign-in" aria-hidden="true" style="font-size:30px;cursor:pointer;color: #00a0f7;position: absolute;top: 0;bottom: 0;right: 10px;"></a>
+  <a href="/logout" ng-click="main.logout();" title="logout" ng-show="main.isLoggedIn" class="fa fa-sign-out" aria-hidden="true" style="font-size:30px;cursor:pointer;color: #00a0f7;position: absolute;top: 0;bottom: 0;right: 10px;"></a>
+</div>
+
+<div class="home" ng-view style="height: 100%;background-color: rgba(0,0,0,0); position: absolute;left: 0;right: 0;bottom: 0;top:0;"></div>
+
+
+<div id="particles-js" style="position: fixed;"></div>
+<script src="assets/js/particles.js"></script>
+<script src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/pageJs/management.js"></script>
+<script type="text/javascript" src="assets/js/pageJs/home.js"></script>
+<script type="text/javascript" src="assets/js/pageJs/main.js"></script>
+
+</body>
+</html>

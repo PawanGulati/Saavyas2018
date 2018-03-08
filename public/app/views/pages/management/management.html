@@ -1,0 +1,233 @@
+
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'users')">Solo</button>
+  <button class="tablinks" onclick="openCity(event, 'teams')">Groups</button>
+</div>
+
+<div id="users" class="tabcontent">
+  <div class="row text-center">
+    <div class="container">
+        <h2 class="section-heading">User Management</h2>
+        <h3 class="section-subheading text-muted">Hello <strong>{{ main.name }}, </strong>This page gives users detail</h3>
+    </div>
+</div>
+<!-- Heading -->
+
+<br>
+
+<!-- Loading Icon (Bootstrap) -->
+<div class="jumbotron text-center" ng-show="management.loading">
+    <span class="fa fa-cog fa-spin fa-3x fa-fw"></span>
+    <p>Loading....</p>
+</div>
+<!-- Loading Icon (Bootstrap) -->
+
+<br>
+
+<!-- Input For Filter  -->
+
+<!-- Container: Start -->
+<div class="container">
+  <div class="navbar-form">
+        <div class="form-group">
+            <input type="text" class="form-control" name="search" placeholder="search for..." ng-model="searchKeyword">
+        </div>
+        <!-- Serach Button -->
+        <button type="button" ng-click="management.search(searchKeyword, number);" class="btn btn-default">Search</button>
+        <!-- Clear Button -->
+        <button type="button" ng-click="management.clear();" class="btn btn-default">Clear</button>
+        <!-- Advanced Search Button -->
+    </div>
+    <!-- Simple Search Bar /-->
+
+    <!-- Custom Error Message -->
+    <div class="row show-hide-message" ng-show="management.showMoreError">
+        <div class="alert alert-danger">{{ management.showMoreError }}</div>
+    </div>
+    <!-- Custom Error Message -->
+
+</div>
+<!-- Container: End -->
+
+<br>
+
+<!-- Total Search Results -->
+<div ng-show="searchFilter !== undefined">
+    <p><strong>Total results: </strong>{{ (management.users | filter: searchFilter).length }}</p>
+</div>
+
+<!-- Results Being Shown -->
+<div ng-show="searchFilter !== undefined">
+    <p><strong>Showing: </strong>{{( management.users | filter: searchFilter | limitTo: management.limit).length }}</p>
+</div>
+
+<br>
+<br>
+<br>
+
+<!-- User Management Table -->
+<div class="panel panel-primary">
+    <!-- Heading -->
+    <div class="panel-heading">
+        <strong>User Management</strong>
+    </div>
+    <!-- Start: Table -->
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Institute</th>
+            <th>Events Participated in</th>
+        </tr>
+        <tr ng-repeat="person in management.users | filter: searchFilter | limitTo: management.limit">
+            <td>{{ person.name }}</td>
+            <td>{{ person.email }}</td>
+            <td>{{ person.contact }}</td>
+            <td>{{ person.institute }}</td>
+            <td>{{ person.uevents }}</td>
+
+
+            
+        </tr>
+        <!-- End: Table -->
+    </table>
+</div>
+<!-- User Management Table -->
+
+<br>
+<br>
+<br>
+
+
+
+<!-- Custom Error Message -->
+<div class="row show-hide-message" ng-show="management.showMoreError">
+    <div class="alert alert-danger">{{ management.showMoreError }}</div>
+</div>
+<!-- Custom Error Message -->
+
+</div>
+
+<div id="teams" class="tabcontent">
+  <div class="row text-center">
+    <div class="container">
+        <h2 class="section-heading">User Management</h2>
+        <h3 class="section-subheading text-muted">Hello <strong>{{ main.name }}, </strong>This page gives teams detail</h3>
+    </div>
+</div>
+<!-- Heading -->
+
+<br>
+
+<!-- Loading Icon (Bootstrap) -->
+<div class="jumbotron text-center" ng-show="management.loading">
+    <span class="fa fa-cog fa-spin fa-3x fa-fw"></span>
+    <p>Loading....</p>
+</div>
+<!-- Loading Icon (Bootstrap) -->
+
+<br>
+
+<!-- Input For Filter  -->
+
+
+<!-- Container: Start -->
+<div class="container">
+
+    <!-- Apply Button Filter -->
+    
+    <!-- Input For Filter  -->
+
+    <!-- Simple Search Bar -->
+    <div class="navbar-form">
+        <div class="form-group">
+            <!-- Search Input -->
+            <input type="text" class="form-control" name="search" placeholder="search for..." ng-model="searchKeyword">
+        </div>
+        <!-- Serach Button -->
+        <button type="button" ng-click="management.search(searchKeyword, number);" class="btn btn-default">Search</button>
+        <!-- Clear Button -->
+        <button type="button" ng-click="management.clear();" class="btn btn-default">Clear</button>
+        <!-- Advanced Search Button -->
+        
+    </div>
+    <!-- Simple Search Bar /-->
+
+    <!-- Custom Error Message -->
+    <div class="row show-hide-message" ng-show="management.showMoreError">
+        <div class="alert alert-danger">{{ management.showMoreError }}</div>
+    </div>
+    <!-- Custom Error Message -->
+
+</div>
+<!-- Container: End -->
+
+<br>
+
+<!-- Total Search Results -->
+<div ng-show="searchFilter !== undefined">
+    <p><strong>Total results: </strong>{{ (management.teams | filter: searchFilter).length }}</p>
+</div>
+
+<!-- Results Being Shown -->
+<div ng-show="searchFilter !== undefined">
+    <p><strong>Showing: </strong>{{( management.teams | filter: searchFilter | limitTo: management.limit).length }}</p>
+</div>
+
+<br>
+<br>
+<br>
+
+<!-- User Management Table -->
+<div class="panel panel-primary">
+    <!-- Heading -->
+    <div class="panel-heading">
+        <strong>User Management</strong>
+    </div>
+    <!-- Start: Table -->
+    <table class="table">
+        <tr>
+            <th>Team Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Institute</th>
+            <th>Leader's name</th>
+            <th>Number of members</th>
+            <th>Events Participated in</th>
+        </tr>
+        <tr ng-repeat="person in management.teams | filter: searchFilter | limitTo: management.limit">
+            <td>{{ person.teamname }}</td>
+            <td>{{ person.email }}</td>
+            <td>{{ person.contact }}</td>
+            <td>{{ person.institute }}</td>
+             <td>{{ person.tlname }}</td>
+            <td>{{ person.memberno }}</td>
+            <td>{{ person.tevents }}</td>
+
+
+            
+        </tr>
+        <!-- End: Table -->
+    </table>
+</div>
+<!-- User Management Table -->
+
+<br>
+<br>
+<br>
+
+
+
+<!-- Custom Error Message -->
+<div class="row show-hide-message" ng-show="management.showMoreError">
+    <div class="alert alert-danger">{{ management.showMoreError }}</div>
+</div>
+<!-- Custom Error
+</div>
+
+
+
+     

@@ -1,0 +1,21 @@
+div > div > a> .reg{	z-index: 5;
+		visibility: hidden;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		vertical-align: center;
+		margin: auto;padding: 4px;
+		text-align: center;
+		color: white;
+		background-color: rgba(0,0,0,0.9);
+	}
+
+
+	div>div>a:hover> .reg{	z-index: 5;
+		visibility: visible;
+		color: white;
+		font-size: 40px;
+		background-color: rgba(0,0,0.9);
+		 transition: .4s ease-in-out;
+	}

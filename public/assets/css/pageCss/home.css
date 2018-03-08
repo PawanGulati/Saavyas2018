@@ -1,0 +1,16 @@
+.animGif {
+    height: 30%;
+    display: block;
+    display: none;  
+    transition: 3s;
+}
+.pain2 , .pain{
+	opacity: 1;
+}
+
+@-webkit-keyframes mymove {
+    0%   {opacity: 0;}
+    25%  {opacity: 0;}
+    75%  {opacity:  0;}
+    100% {opacity:  1;}
+}

@@ -1,0 +1,27 @@
+{
+  "name": "saavyas'18",
+  "version": "1.0.0",
+  "description": "First Techno-Cultural festival of NIT GOA",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Prashant Ramotra",
+  "license": "ISC",
+  "dependencies": {
+    "angular-checkboxes": "^1.0.3",
+    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "get-form-data": "^2.0.0",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.8",
+    "mongoose-title-case": "0.0.4",
+    "mongoose-validator": "^1.3.2",
+    "morgan": "^1.9.0",
+    "nodejs": "0.0.0",
+    "uniqid": "^4.1.1"
+  }
+}

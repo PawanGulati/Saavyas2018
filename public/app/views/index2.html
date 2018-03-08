@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <meta charset="UTF-8">
+  
+  <!-- FOR SEARCH ENGINES ONLY-->
+  <meta name="description" content="Saavyas is the first techno-cultural festival of National Institute of Technology Goa. To be held in 2018">
+  <meta name="keywords" content="NITG, Saavyas 2018, saavyas 18, NIT Goa Saavyas, NITG SAAVYAS,nitg saavyas 18, saavyas nitg, saavyas nitgoa, NIT Goa, National Institute of Technology Goa, SAAVYAS, NIT, Cultural Fest, Cultural Fest India, College Cultural Fest, Cultural fest @ NIT, Saavyas NIT Goa, Saavyas INDIA, Indian Festivals, Saavyas NITG, Cultural fest nitgoa, NITG Cultural Event, Cultural Events, Cultural Events in India, Most famous Cultural Event, Indian Cultural Fest, Saavyas Event, Goa, Cultural fest Goa, Goan Attraction, NIT Goa, Cultural fest Nationa Institute of Technology Goa, Best Cultural Events, NITG, nitg, nitg events, Nitg Events, NITG Main Events">
+  <!--  END   -->
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- font awesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/regadmin.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+  <script type="text/javascript" src="assets/js/script.js"></script>
+  
+  <!-- Main Angular Files -->
+  <script src="assets/js/angular.js"></script>
+  <script src="assets/js/angular-route.js"></script>
+  <script src="assets/js/angular-animate.js"></script>
+  
+  <!-- Angular Controllers -->
+  <script src="app/controllers/adminCtrl.js"></script>
+  <script src="app/services/adminServices.js"></script>
+
+  <!-- Angular Config/Routes -->
+  <script src="app/app.js"></script>
+  <script src="app/routes.js"></script>
+
+
+</head>
+<body ng-app='userApp'>
+
+
+<div id="myNav" class="overlay navbar-inverse">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <div class="container">
+      <div class="row">
+
+          <div class="col-lg-4 col-sm-6 ">
+            <a href="/index.html" onclick="closeNav()"><span class="fa fa-home"></span><br> Home</a>
+          </div>
+          <div class="col-lg-4 col-sm-6 ">
+            <a href="#/" onclick="closeNav()"><span class="fa fa-yelp"></span><br> Nirvana</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="#" onclick="closeNav()"><span class="fa fa-suitcase"></span><br> Sponsers</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="#" onclick="closeNav()"><span class="fa fa-lightbulb-o"><br> Initiatives</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="#" onclick="closeNav()"><span class="fa fa-hotel"></span><br> Hospitality</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="#/events" onclick="closeNav()"><span class="fa fa-music"></span><br> Events</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="#" onclick="closeNav()"><span class="fa fa-group"></span><br> Meet Team</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="/regadmins" onclick="closeNav()"><span class="fa fa-edit"></span><br> Register</a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a href="#" onclick="closeNav()"><span class="fa fa-child"></span><br> Campus Ambassador</a>
+          </div>
+          <div class="col-lg-4 col-lg-offset-2 col-sm-6">
+          	<a href="#" onclick="closeNav()"><span class="fa1 fa fa-user"><h1>About Us</h1></span></a>
+          </div>
+          <div class="col-lg-4 col-lg-offset-6 col-sm-6">
+          	<a href="#" onclick="closeNav()"><span class="fa1 fa fa-map-marker"><h1>Contact Us</h1></span></a>
+          </div>
+      </div>
+    	</div>
+  	</div>
+	</div>
+</div>
+<!-- particles.js container -->
+<div class="bar">
+  <span style="font-size:30px;cursor:pointer;color: #00a0f7;" onclick="openNav()" class="nav">&#9776; </span> <!-- For full screen navigation click here -->
+</div>
+<div class="home" ng-view >
+  
+</div>
+
+
+
+<div id="particles-js" ></div>
+<script src="assets/js/jquery-3.1.1.min.js"></script>
+<script src="assets/js/particles.js"></script>
+<script src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/pageJs/home.js"></script>
+</body>
+</html>

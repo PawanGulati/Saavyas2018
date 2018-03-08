@@ -1,0 +1,42 @@
+<div ng-controller="basicUsageCtrl" mt-to="checkboxList" style="position: absolute;top: 40px;left: 0;right: 0;bottom: 0;background-color: white;">
+  <ul>
+    <li class="checkbox"><label>
+      <input type="checkbox" mt-checkbox="'Checkbox 1'" />it should add/remove the string <code>'Checkbox 1'</code>
+    </label></li>
+    <li class="checkbox"><label>
+      <input type="checkbox" mt-checkbox="myValue" />it should add/remove the value of <code>$scope.myValue</code>
+    </label></li>
+    <li class="checkbox"><label>
+      <input type="checkbox" mt-checkbox name="Checkbox 3"/>it should add/remove the value of the <code>name</code> attribute
+    </label></li>
+    <li class="checkbox"><label>
+      <input type="checkbox" mt-checkbox="'Checkbox 4'" name="unusedValue"/>it should ignore name attribute and add/remove the string <code>'Checkbox 4'</code>
+    </label></li>
+  </ul>
+  <h4>Scope :</h4>
+  <pre>
+$scope.myValue: {{myValue}}
+$scope.checkboxList: {{checkboxList}}
+<script type="text/javascript">console.log('hi................................................');</script>
+  </pre>
+  <ul>
+    <li>
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-default" ng-click="add('Checkbox 1')">Add <code>'Checkbox 1'</code></button>
+        <button class="btn btn-default" ng-click="remove('Checkbox 1')">Remove <code>'Checkbox 1'</code></button>
+      </div>
+    </li>
+    <li>
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-default" ng-click="add(myValue)">Add <code>$scope.myValue</code></button>
+        <button class="btn btn-default" ng-click="remove(myValue)">Remove <code>$scope.myValue</code></button>
+      </div>
+    </li>
+    <li>
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-default" ng-click="add('Checkbox 3')">Add <code>'Checkbox 3'</code></button>
+        <button class="btn btn-default" ng-click="remove('Checkbox 3')">Remove <code>'Checkbox 3'</code></button>
+      </div>
+    </li>
+  </ul>
+</div>
